@@ -60,13 +60,15 @@ bool SPFooter::checkSize(u32 size) const {
     }
 }
 
-void SPFooter::OnRaceStart(bool speedModIsEnabled, bool isVanilla, bool setInMirror) {
+void SPFooter::OnRaceStart(bool speedModIsEnabled, bool isVanilla, bool setInMirror, bool ttIs100cc, bool ttIs50cc) {
     s_instance = {};
     s_instance.version = VERSION;
     s_instance.hasSpeedMod = speedModIsEnabled;
     s_instance.isVanilla = isVanilla;
     s_instance.hasSimplifiedControls = false;
     s_instance.setInMirror = setInMirror;
+    s_instance.setIn100cc = ttIs100cc;
+    s_instance.setIn50cc = ttIs50cc;
     s_usedShrooms = 0;
 }
 
@@ -161,6 +163,28 @@ std::optional<bool> GhostFooter::hasSpeedMod() const {
         return m_ctgp.category >= 4;
     case SPFooter::MAGIC:
         return m_sp.hasSpeedMod;
+    default:
+        return {};
+    }
+}
+
+std::optional<bool> GhostFooter::setIn100cc() const {
+    switch (m_magic) {
+    case CTGPFooter::MAGIC:
+        return m_ctgp.category >= 4;
+    case SPFooter::MAGIC:
+        return m_sp.setIn100cc;
+    default:
+        return {};
+    }
+}
+
+std::optional<bool> GhostFooter::setIn50cc() const {
+    switch (m_magic) {
+    case CTGPFooter::MAGIC:
+        return m_ctgp.category >= 4;
+    case SPFooter::MAGIC:
+        return m_sp.setIn50cc;
     default:
         return {};
     }

@@ -18,6 +18,8 @@ void GhostManagerPage::SPList::populate() {
     auto courseId = raceConfig->menuScenario().courseId;
     auto cc = saveManager->getSetting<SP::ClientSettings::Setting::TAClass>();
     bool speedModIsEnabled = cc == SP::ClientSettings::TAClass::CC200;
+    bool ttIs100cc = cc == SP::ClientSettings::TAClass::CC100;
+    bool ttIs50cc = cc == SP::ClientSettings::TAClass::CC50;
 
     Sha1 courseSha1;
     if (raceConfig->m_spMenu.courseSha.has_value()) {
@@ -34,6 +36,12 @@ void GhostManagerPage::SPList::populate() {
             continue;
         }
         if (footer->hasSpeedMod() && *(footer->hasSpeedMod()) != speedModIsEnabled) {
+            continue;
+        }
+        if (footer->setIn100cc() && *(footer->setIn100cc()) != ttIs100cc) {
+            continue;
+        }
+        if (footer->setIn50cc() && *(footer->setIn50cc()) != ttIs50cc) {
             continue;
         }
         if (header->courseId != courseId) {

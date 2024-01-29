@@ -118,7 +118,11 @@ void KartObjectManager::CreateInstance() {
         isVanilla = false;
     }
 
-    System::SPFooter::OnRaceStart(raceScenario.is200cc, isVanilla, raceScenario.mirror);
+    auto getcc = saveManager->getSetting<SP::ClientSettings::Setting::TAClass>();
+    bool is100cc = getcc == SP::ClientSettings::TAClass::CC100;
+    bool is50cc = getcc == SP::ClientSettings::TAClass::CC50;
+
+    System::SPFooter::OnRaceStart(raceScenario.is200cc, isVanilla, raceScenario.mirror, is100cc, is50cc);
 
     s_instance = new KartObjectManager;
 }

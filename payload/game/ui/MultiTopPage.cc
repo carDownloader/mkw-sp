@@ -98,7 +98,7 @@ void MultiTopPage::onSettingsButtonFront(PushButton *button, u32 /* localPlayerI
 }
 
 void MultiTopPage::onSettingsButtonSelect(PushButton * /* button */, u32 /* localPlayerId */) {
-    m_instructionText.setMessage(10077);
+    m_instructionText.setMessage(10076);
 }
 
 void MultiTopPage::onVSButtonFront(PushButton *button, u32 /* localPlayerId */) {

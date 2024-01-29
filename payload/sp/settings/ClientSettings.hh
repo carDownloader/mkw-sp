@@ -255,6 +255,8 @@ enum class TAClass {
     CC150,
     CC200,
     Mirror,
+    CC50,
+    CC100,
 };
 
 enum class TAGhostSorting {

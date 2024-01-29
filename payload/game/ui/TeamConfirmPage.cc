@@ -47,7 +47,7 @@ void TeamConfirmPage::onInit() {
     m_backButton.setFrontHandler(&m_onBackButtonFront, false);
 
     m_pageTitleText.setMessage(3503);
-    m_settingsButton.setMessageAll(10076);
+    m_settingsButton.setMessageAll(10075);
 }
 
 void TeamConfirmPage::onActivate() {

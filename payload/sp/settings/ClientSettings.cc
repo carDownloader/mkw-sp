@@ -278,8 +278,8 @@ const Entry entries[] = {
         .defaultValue = static_cast<u32>(TAClass::CC150),
         .valueCount = magic_enum::enum_count<TAClass>(),
         .valueNames = magic_enum::enum_names<TAClass>().data(),
-        .valueMessageIds = (u32[]) { 3413, 10072, 3414 },
-        .valueExplanationMessageIds = (u32[]) { 10079, 10081, 10080 },
+        .valueMessageIds = (u32[]) { 3413, 10072, 3414, 3411, 3412 },
+        .valueExplanationMessageIds = (u32[]) { 10079, 10081, 10080, 10077, 10078 },
     },
     [static_cast<u32>(Setting::TAGhostSorting)] = {
         .category = Category::TA,

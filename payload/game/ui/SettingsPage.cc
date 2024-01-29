@@ -70,7 +70,7 @@ void SettingsPage::onInit() {
         m_settingControls[i].setSelectHandler(&m_onSettingControlSelect);
     }
 
-    m_pageTitleText.setMessage(10076);
+    m_pageTitleText.setMessage(10075);
 }
 
 void SettingsPage::onActivate() {

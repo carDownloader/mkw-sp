@@ -71,6 +71,10 @@ void RaceConfig::applyEngineClass() {
             setting = SP::ClientSettings::EngineClass::CC200;
         } else if (taSetting == SP::ClientSettings::TAClass::Mirror) {
             setting = SP::ClientSettings::EngineClass::Mirror;
+        } else if (taSetting == SP::ClientSettings::TAClass::CC100) {
+            setting = SP::ClientSettings::EngineClass::CC100;
+        } else if (taSetting == SP::ClientSettings::TAClass::CC50) {
+            setting = SP::ClientSettings::EngineClass::CC50;
         }
     }
 

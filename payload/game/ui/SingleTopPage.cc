@@ -123,7 +123,7 @@ void SingleTopPage::onSettingsButtonFront(PushButton *button, u32 /* localPlayer
 }
 
 void SingleTopPage::onSettingsButtonSelect(PushButton * /* button */, u32 /* localPlayerId */) {
-    m_instructionText.setMessage(10077);
+    m_instructionText.setMessage(10076);
 }
 
 void SingleTopPage::onTAButtonFront(PushButton *button, u32 /* localPlayerId */) {
